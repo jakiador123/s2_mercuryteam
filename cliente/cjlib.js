@@ -491,6 +491,6 @@ window.onload = function() {
 
   c = cjs();
   // Ruta de entrada a la API
-  c.g.collectionUrl = location.protocol + '//' + location.hostname + '/api';
+  c.g.collectionUrl = location.href.replace('index.html','') + '../api';
   c.init();
 };
