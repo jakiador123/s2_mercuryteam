@@ -1,5 +1,17 @@
 <?php
 
+// Manejador de errores.
+// Para mostrar información en se archivo hay que ejecutar:
+// $app->getLog()->info('MENSAJE DE TEXTO');
+
+class GestorErrores {
+  public function write($message) {
+    // Los errores se muestran en el archivo 'errores.log' dentro de la carpeta 'api'
+    file_put_contents('errores.log', $message . PHP_EOL, FILE_APPEND);
+  }
+}
+
+
 // Cargar Slim Framework y Eloquent a través de Composer
 require '../vendor/autoload.php';
 
@@ -8,7 +20,10 @@ require 'database.php';
 
 // Crear la aplicación Slim que trabaje con el sistema de Views Twig
 $app = new \Slim\Slim(array(
-    'view' => new \Slim\Views\Twig()
+    'view' => new \Slim\Views\Twig(),
+    'log.enabled' => true, // Habilitar errores
+    'log.level' => \Slim\Log::DEBUG,
+    'log.writer' => new GestorErrores()
 ));
 
 // Establecer el tipo de datos devuelto por defecto como JSon
