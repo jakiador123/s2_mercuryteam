@@ -15,12 +15,14 @@
       {
         "href" : "{{ url }}",
         "data" : [
-          {"name" : "name", "value" : "{{ item.name }}", "prompt" : "Nombre de la película"},
-	  {"name" : "description", "value" : "{{ item.description }}", "prompt" : "Descripción de la película"},
-	  {"name" : "director", "value" : "{{ item.director }}", "prompt" : "Director de la película"},
-	  {"name" : "datePublished", "value" : "{{ item.datePublished }}", "prompt" : "Fecha de lanzamiento"},
-	  {"name" : "embedUrl", "value" : "{{ item.embedUrl }}", "prompt" : "Trailer en Youtube"}
-        ]
+          {"name" : "name", "value" : "{{ item.name }}", "prompt" : "Nombre del videojuego"},
+		  {"name" : "description", "value" : "{{ item.description }}", "prompt" : "Descripción del videojuego"},
+		  {"name" : "gamePlatform", "value" : "{{ item.gamePlatform }}", "prompt" : "Plataforma"},
+		  {"name" : "applicationSubCategory", "value" : "{{ item.applicationSubCategory }}", "prompt" : "Categoria"},
+		  {"name" : "screenshot", "value" : "{{ item.screenshot }}", "prompt" : "Imagen"},
+		  {"name" : "datePublished", "value" : "{{ item.datePublished }}", "prompt" : "Fecha de Publicación"},
+		  {"name" : "embedUrl", "value" : "{{ item.embedUrl }}", "prompt" : "Gameplay en Youtube"}
+		]
       } 
   
     ],
@@ -28,11 +30,13 @@
     
     "template" : {
       "data" : [
-        {"name" : "name", "value" : "{{ item.name }}", "prompt" : "Nombre de la película"},
-	  {"name" : "description", "value" : "{{ item.description }}", "prompt" : "Descripción de la película"},
-	  {"name" : "director", "value" : "{{ item.director }}", "prompt" : "Director de la película"},
-	  {"name" : "datePublished", "value" : "{{ item.datePublished }}", "prompt" : "Fecha de lanzamiento"},
-	  {"name" : "embedUrl", "value" : "{{ item.embedUrl }}", "prompt" : "Trailer en Youtube"}
+          {"name" : "name", "value" : "{{ item.name }}", "prompt" : "Nombre del videojuego"},
+	  {"name" : "description", "value" : "{{ item.description }}", "prompt" : "Descripción del videojuego"},
+	  {"name" : "gamePlatform", "value" : "{{ item.gamePlatform }}", "prompt" : "Plataforma"},
+	  {"name" : "applicationSubCategory", "value" : "{{ item.applicationSubCategory }}", "prompt" : "Categoria"},
+	  {"name" : "screenshot", "value" : "{{ item.screenshot }}", "prompt" : "Imagen"},
+	  {"name" : "datePublished", "value" : "{{ item.datePublished }}", "prompt" : "Fecha de Publicación"},
+	  {"name" : "embedUrl", "value" : "{{ item.embedUrl }}", "prompt" : "Gameplay en Youtube"}
       ]
     }
   } 

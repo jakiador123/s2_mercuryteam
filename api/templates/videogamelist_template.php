@@ -4,7 +4,7 @@
     "href" : "{{ url }}",
     
     "links" : [
-      {"rel" : "profile" , "href" : "http://schema.org/Movie"},
+      {"rel" : "profile" , "href" : "http://schema.org/VideoGame"},
       {"rel" : "collection", "href" : "{{ url }}/../movies"},
       {"rel" : "collection", "href" : "{{ url }}/../books"},
       {"rel" : "collection", "href" : "{{ url }}/../musicalbums"},
@@ -17,7 +17,7 @@
       {
         "href" : "{{ url }}/{{ item.id }}",
         "data" : [
-          {"name" : "name", "value" : "{{ item.name }}", "prompt" : "Nombre de la película"}
+          {"name" : "name", "value" : "{{ item.name }}", "prompt" : "Nombre del videojuego"}
         ]
       } {% if not loop.last %},{% endif %}
       
@@ -27,11 +27,13 @@
     
     "template" : {
       "data" : [
-        {"name" : "name", "value" : "", "prompt" : "Nombre de la película"},
-	{"name" : "description", "value" : "", "prompt" : "Descripción de la película"},
-	{"name" : "director", "value" : "", "prompt" : "Director de la película"},
-	{"name" : "datePublished", "value" : "", "prompt" : "Fecha de lanzamiento"},
-	{"name" : "embedUrl", "value" : "", "prompt" : "Trailer en Youtube"}        
+		{"name" : "name", "value" : "{{ item.name }}", "prompt" : "Nombre del videojuego"},
+		{"name" : "description", "value" : "{{ item.description }}", "prompt" : "Descripción del videojuego"},
+		{"name" : "gamePlatform", "value" : "{{ item.gamePlatform }}", "prompt" : "Plataforma"},
+		{"name" : "applicationSubCategory", "value" : "{{ item.applicationSubCategory }}", "prompt" : "Categoria"},
+		{"name" : "screenshot", "value" : "{{ item.screenshot }}", "prompt" : "Imagen"},
+		{"name" : "datePublished", "value" : "{{ item.datePublished }}", "prompt" : "Fecha de Publicación"},
+		{"name" : "embedUrl", "value" : "{{ item.embedUrl }}", "prompt" : "Gameplay en Youtube"}
       ]
     }
   } 
