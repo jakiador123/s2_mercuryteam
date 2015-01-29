@@ -17,7 +17,7 @@
       {
         "href" : "{{ url }}/{{ item.id }}",
         "data" : [
-          {"name" : "name", "value" : "{{ item.name }}", "prompt" : "Nombre de la película"}
+          {"name" : "name", "value" : "{{ item.name }}", "prompt" : "Nombre del libro"}
         ]
       } {% if not loop.last %},{% endif %}
       
@@ -27,11 +27,11 @@
     
     "template" : {
       "data" : [
-        {"name" : "name", "value" : "", "prompt" : "Nombre de la película"},
-	{"name" : "description", "value" : "", "prompt" : "Descripción de la película"},
-	{"name" : "director", "value" : "", "prompt" : "Director de la película"},
-	{"name" : "datePublished", "value" : "", "prompt" : "Fecha de lanzamiento"},
-	{"name" : "embedUrl", "value" : "", "prompt" : "Trailer en Youtube"}        
+    {"name" : "name", "value" : "{{ item.name }}", "prompt" : "Nombre del libro"},
+	  {"name" : "description", "value" : "{{ item.description }}", "prompt" : "Descripción del libro"},
+	  {"name" : "isbn", "value" : "{{ item.isbn }}", "prompt" : "isbn del libro"},
+	  {"name" : "datePublished", "value" : "{{ item.datePublished }}", "prompt" : "Fecha de lanzamiento"},
+	  {"name" : "image", "value" : "{{ item.image }}", "prompt" : "Imagen del libro"}
       ]
     }
   } 
