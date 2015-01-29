@@ -218,7 +218,7 @@ var cjs = function() {
 
     dst = document.getElementById('write-template');
     if (dst) {
-      form = templateForm();
+      form = templateForm(g.data.collection.href);
       fset = document.createElement('fieldset');
 
       coll = g.data.collection.template.data;
