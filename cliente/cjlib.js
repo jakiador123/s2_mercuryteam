@@ -113,7 +113,7 @@ var cjs = function() {
         // handle items
         for (i = 0, x = coll.length; i < x; i++) {
           dt = document.createElement('dt');
-          dt.appendChild(processItemLink(coll[i], true, i));
+          dt.appendChild(processItemLink(coll[i], true, i+1));
 
           dd = document.createElement('dd');
           dd.title = coll[i].href;
@@ -175,13 +175,30 @@ var cjs = function() {
   function processItemLink(item, editable, x) {
     var a, edit;
     edit = editable || true;
-
+	var link = item.href;
+	
     a = document.createElement('a');
     if (item) {
       a.className = 'item-link';
       a.href = item.href;
       a.title = 'item-link';
-      a.appendChild(document.createTextNode('Item ' + x));
+	  if(link.search("movies") != -1)
+	  {
+		a.appendChild(document.createTextNode('Pelicula ' + x));
+	  }
+	  else if(link.search("books") != -1)
+	  {
+		a.appendChild(document.createTextNode('Libro ' + x));
+	  }
+	  else if(link.search("musicalbums") != -1)
+	  {
+		a.appendChild(document.createTextNode('CD ' + x));
+	  }
+	  else if(link.search("videogames") != -1)
+	  {
+		a.appendChild(document.createTextNode('Video juego ' + x));
+	  }
+	  
       if (edit === true) {
         a.onclick = function() {
           showItem(item.href);
