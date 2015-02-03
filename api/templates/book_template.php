@@ -4,7 +4,7 @@
     "href" : "{{ url }}",
     
     "links" : [
-      {"rel" : "profile" , "href" : "http://schema.org/Movie"},
+      {"rel" : "profile" , "href" : "http://schema.org/Book"},
       {"rel" : "collection", "href" : "{{ url }}/../../movies"},
       {"rel" : "collection", "href" : "{{ url }}/../../books"},
       {"rel" : "collection", "href" : "{{ url }}/../../musicalbums"},
