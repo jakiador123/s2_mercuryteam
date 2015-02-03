@@ -113,11 +113,11 @@ var cjs = function() {
         // handle items
         for (i = 0, x = coll.length; i < x; i++) {
           dt = document.createElement('dt');
-          dt.appendChild(processItemLink(coll[i], true, i+1));
+          dt.appendChild(processItemLink(coll[i],coll[i].data, true, i+1));
 
           dd = document.createElement('dd');
           dd.title = coll[i].href;
-          dd.appendChild(processData(coll[i].data));
+          //dd.appendChild(processData(coll[i].data));
           dd.appendChild(processLinks(coll[i].links));
 
           dl.appendChild(dt);
@@ -172,7 +172,7 @@ var cjs = function() {
     return ul;
   }
 
-  function processItemLink(item, editable, x) {
+  function processItemLink(item,data, editable, x) {
     var a, edit;
     edit = editable || true;
 	var link = item.href;
@@ -184,19 +184,19 @@ var cjs = function() {
       a.title = 'item-link';
 	  if(link.search("movies") != -1)
 	  {
-		a.appendChild(document.createTextNode('Pelicula ' + x));
+		a.appendChild(document.createTextNode(data[0].value)); //('Pelicula ' + x));
 	  }
 	  else if(link.search("books") != -1)
 	  {
-		a.appendChild(document.createTextNode('Libro ' + x));
+		a.appendChild(document.createTextNode(data[0].value));	//('Libro ' + x));
 	  }
 	  else if(link.search("musicalbums") != -1)
 	  {
-		a.appendChild(document.createTextNode('CD ' + x));
+		a.appendChild(document.createTextNode(data[0].value));	//('CD ' + x));
 	  }
 	  else if(link.search("videogames") != -1)
 	  {
-		a.appendChild(document.createTextNode('Video juego ' + x));
+		a.appendChild(document.createTextNode(data[0].value));	//('Videojuego ' + x));
 	  }
 	  
       if (edit === true) {
@@ -337,7 +337,7 @@ var cjs = function() {
       toggleInputForm();
       return false;
     };
-    a.appendChild(document.createTextNode('Add Task'));
+    a.appendChild(document.createTextNode('Crear nuevo'));
     p = document.createElement('p');
     p.className = 'input-block';
     p.appendChild(a);

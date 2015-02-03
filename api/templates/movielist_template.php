@@ -4,11 +4,11 @@
     "href" : "{{ url }}",
     
     "links" : [
-      {"rel" : "profile" , "href" : "http://schema.org/Movie"},
-      {"rel" : "collection", "href" : "{{ url }}/../movies"},
-      {"rel" : "collection", "href" : "{{ url }}/../books"},
-      {"rel" : "collection", "href" : "{{ url }}/../musicalbums"},
-      {"rel" : "collection", "href" : "{{ url }}/../videogames"}
+      {"rel" : "profile" ,"prompt" : "Schema", "href" : "http://schema.org/Movie"},
+      {"rel" : "collection", "prompt" : "Películas", "href" : "{{ url }}/../movies"},
+      {"rel" : "collection", "prompt" : "Libros", "href" : "{{ url }}/../books"},
+      {"rel" : "collection", "prompt" : "Música", "href" : "{{ url }}/../musicalbums"},
+      {"rel" : "collection", "prompt" : "Videojuegos", "href" : "{{ url }}/../videogames"}
     ],
     
     "items" : [
